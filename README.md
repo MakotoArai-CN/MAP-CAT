@@ -8,7 +8,7 @@
 
 ---
 
-<font color=red size=5>****⚠️⚠️⚠️⚠️WARNING: Once started, do not interrupt! Do not interact with the automatically opened browser! Serious issues may occur.⚠️⚠️⚠️⚠️****</font>
+<font color=red size=5>**⚠️WARNING: Once started, do not interrupt! Do not interact with the automatically opened browser! Serious issues may occur.**</font>
 
 ## File Resource Locations
 
@@ -23,7 +23,7 @@
 
 ### Installation & Running
 
-Make sure to configure the Excel file path in `config.js`！⚠️⚠️⚠️⚠️
+⚠️Make sure to configure the Excel file path in `config.js`！
 
 #### For Regular Users
 
@@ -37,7 +37,7 @@ Double-click `start.bat` to launch the program. It will guide you through the in
 
 ---
 
-### <font color=red>⚠️⚠️⚠️⚠️WARNING: Once started, do not interrupt!! Serious issues may occur. ⚠️⚠️⚠️⚠️</font>
+### <font color=red>⚠️WARNING: Once started, do not interrupt!! Serious issues may occur. </font>
 
 ## Changelog
 
