@@ -1,76 +1,76 @@
+# Map Screenshot Tool Instructions
 
-# 地图裁切说明
+## Usage Notes
 
-# 使用事项
+1. **This is a personal automated screenshot tool.** Before using it, test with small batches, for example, a table with 100 rows of data.
+2. **Automation Assumptions:** The first column in the data is assumed to be the name, and the last column is the map address. Please adjust the data as needed.
+3. **Excel Customization:** If you're not familiar with the tool, you only need to modify the Excel part. Default configurations are already set up.
 
-1. 这是我自己用的自动化截图工具，使用前分小批量截图，例如一个表格100条数据。
-2. 完全实现自动化，默认第1列数据为名称，最后1列数据为地图地址，请自行修改数据。
-3. 如果你不懂，修改excel部分即可，默认配置好了。
+---
 
-</br>
+<font color=red size=5>****⚠️⚠️⚠️⚠️WARNING: Once started, do not interrupt! Do not interact with the automatically opened browser! Serious issues may occur.⚠️⚠️⚠️⚠️****</font>
 
-<font color=red size=5>****注意⚠:一旦执行，不能终止！不能操作自动打开的浏览器！否则问题很大⚠⚠⚠⚠****</font>
+## File Resource Locations
 
-## 1.文件资源位置
+1. **Excel file should be placed in the root directory.**
+2. **Output Directory:** Screenshots are saved by default in the `screenshots` folder.
 
- 1. excel放在根目录
- 2. 文件，默认输出目录`screenshots`
+### Code Modifications
 
-### 2. 代码修改
+1. **Modify the path in `config.js` to point to your Excel file.** If the file is in the root directory, just change the filename.
+2. **Change the output directory from `screenshots` to your desired path,** preferably an absolute path.
+3. **Adjust the waiting time in `config.js` (default is 6000 milliseconds).** Increase this if you have slow internet or want more manual control.
 
- 1. 需要修改`config.js`的路径为你的excel文件路径，根目录直接改为文件名。
- 2. 想输出到指定文件夹的话，修改`screenshots`改为你的文件路径，最好是绝对路径。
- 3. 修改`config.js`的等待时间（默认6000毫秒），网速慢或者想手动调整，改大一点就行。
+### Installation & Running
 
-### 3. 安装运行
+Make sure to configure the Excel file path in `config.js`！⚠️⚠️⚠️⚠️
 
-1. 安装`nodejs`,版本需要大于14，最好是新版本。
-2. 根目录执行`npm i`安装依赖。
-3. 根目录执行`npm start`执行脚本。
+#### For Regular Users
 
-### <font color=red>注意⚠:一旦执行，不能终止！！！！！否则问题很大⚠⚠⚠⚠</font>
+Double-click `start.bat` to launch the program. It will guide you through the installation and configuration process.
 
-# 更新日志
+#### For Developers
 
-## MPA-CAT1.1.2
+1. **Install Node.js:** Ensure your version is greater than 14, and use the latest available version.
+2. **Install dependencies:** In the root directory, run `npm i`.
+3. **Run the script:** Execute `npm start`.
 
-- 新增一键运行功能。
+---
 
-## MPA-CAT1.1.1
+### <font color=red>⚠️⚠️⚠️⚠️WARNING: Once started, do not interrupt!! Serious issues may occur. ⚠️⚠️⚠️⚠️</font>
 
-- 新增自定义功能。
+## Changelog
 
-## MPA-CAT1.1.0
+### MPA-CAT1.1.2
+- Added one-click run functionality.
 
-- 新增自动寻找标点功能。
-- 新增Excel数据格式。
-- 新增自检功能。
-- 修复已知BUG。
+### MPA-CAT1.1.1
+- Added customizable features.
 
-## MPA-CAT1.0.5
+### MPA-CAT1.1.0
+- Added automatic landmark detection.
+- Updated Excel data format.
+- Added self-check function.
+- Fixed known bugs.
 
-- 修复截图BUG。
-- 新增没有标点数据标记。
+### MPA-CAT1.0.5
+- Fixed screenshot bug.
+- Added feature to mark entries without landmarks.
 
-## MPA-CAT1.0.4
+### MPA-CAT1.0.4
+- Achieved near-perfect automation.
+- Fixed known bugs.
+- Added automatic centering of main components.
 
-- 几乎完美实现自动化。
-- 修复已知的BUG。
-- 新增自动将主要部件移动到中心点的功能。
+### MPA-CAT1.0.3
+- Fixed major bug.
 
-## MPA-CAT1.0.3
+### MPA-CAT1.0.2
+- Fixed imprecise screenshot bug.
 
-- 修复一火车BUG。
-
-## MPA-CAT1.0.2
-
-- 修复无法精确截图的bug。
-
-## MPA-CAT1.0.1
-
-- 修改图片文件名为唯一UUID，相关信息存在url文件夹内。
+### MPA-CAT1.0.1
+- Changed image filenames to unique UUIDs, with related information stored in the URL folder.
 
 ### MPA-CAT1.0.0
-
-- 预览版发布
-- 根据Excel截图保存到本地。
+- Preview release.
+- Screenshots taken based on Excel data and saved locally.
