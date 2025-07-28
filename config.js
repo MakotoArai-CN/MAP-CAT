@@ -5,12 +5,14 @@ exports.config={                        // 基本配置
     excel_:"screenshots_data.xlsx",     // excel文件保存路径
     sheetName:"Screenshots_Data",       // excel工作表名
     txt_:"url.txt",                     // url.txt文件路径
-    map_url:"https://map.baidu.com/",   // 百度地图url
+    map_url:"https://map.baidu.com/",   // 地图url (支持百度地图和高德地图)
+                                        // 百度地图: https://map.baidu.com/
+                                        // 高德地图: https://ditu.amap.com/
     checkSystem:true,                   // 是否检查系统
     NetworkLatency_url:"https://www.baidu.com", // 网络延迟url
-    DownloadSpeed_url:"https://cdn.cnbj1.fds.api.mi-img.com/mibook-drivers/BIOS/M59A/20240617/RMARP4B1P0202.zip",   // 下载速度url
+    DownloadSpeed_url:"https://dldir1v6.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.20_250724_x64_01.exe",   // 下载速度url
     wait_time:6000,                     // 等待时间
-    retry_times:3,                      // 重试次数
+    retry_times:6,                      // 重试次数
     map_options:{                       // 地图操作
         mapOut_timeonce:500,            // 地图缩小一次等待时间
         mapOut_timetwice:500,           // 地图缩小两次等待时间

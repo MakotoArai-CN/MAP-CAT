@@ -1,5 +1,24 @@
 # Map Screenshot Tool Instructions
 
+<div align="center">
+  <img src="./mapcat.png" style="border-radius: 50%;" width="300" />
+  <br>
+  <h2>MAP-CAT</h2>
+
+   [![Release](https://img.shields.io/badge/release-v1.1.3-blue.svg)](https://github.com/MakotoArai-CN/MAP-CAT/releases)
+   [![Bun](https://img.shields.io/badge/Bun-1.2.0-brightgreen.svg)](https://bun.sh/)
+   [![Node](https://img.shields.io/badge/Node-14+-brightgreen.svg)](https://nodejs.org/)
+   [![Playwright](https://img.shields.io/badge/Playwright-1.46.0-brightgreen.svg)](https://playwright.dev/)
+   [![XLSX](https://img.shields.io/badge/XLSX-0.18.5-brightgreen.svg)](https://github.com/SheetJS/sheetjs)
+   [![OS](https://img.shields.io/badge/OS-Windows%20|%20Linux%20|%20MacOS-brightgreen.svg)](https://github.com/MakotoArai-CN/MAP-CAT)
+   [![javascript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=darkgreen)](Javascript)
+   [![License](https://img.shields.io/badge/License-AGPLv3-yellow.svg)](LICENSE)
+   [![GitHub stars](https://img.shields.io/github/stars/MakotoArai-CN/MAP-CAT.svg?style=social)](https://github.com/MakotoArai-CN/MAP-CAT)
+
+
+</div>
+
+
 ## Usage Notes
 
 1. **This is a personal automated screenshot tool.** Before using it, test with small batches, for example, a table with 100 rows of data.
@@ -27,19 +46,69 @@
 
 #### For Regular Users
 
-Double-click `start.bat` to launch the program. It will guide you through the installation and configuration process.
+**Option 1: Node.js (推荐)**
+- Double-click `start.bat` to launch the program. It will guide you through the installation and configuration process.
+- Or run `npm i` in the root directory to install dependencies, and then run `node index.js` to start the program.
+
+**Option 2: Bunjs**
+- Install Bunjs globally by running `npm i -g bun` in the terminal.
+- Or run `Powershell -c "irm https://bun.sh/install | iex"` in the terminal.
+- Run `bun install` in the root directory to install dependencies.
+- Run `bun run start` to start the program.
 
 #### For Developers
 
+**Using Node.js:**
 1. **Install Node.js:** Ensure your version is greater than 14, and use the latest available version.
 2. **Install dependencies:** In the root directory, run `npm i`.
 3. **Run the script:** Execute `npm start`.
+
+**Using Bun.js (NEW!):**
+1. **Install Bun.js:** Visit https://bun.sh/ or run `curl -fsSL https://bun.sh/install | bash`
+2. **Install dependencies:** In the root directory, run `bun install`.
+3. **Run the script:** Execute `bun run index.js` or `npm run bun`.
 
 ---
 
 ### <font color=red>⚠️WARNING: Once started, do not interrupt!! Serious issues may occur. </font>
 
+## Troubleshooting
+
+### Common Issues and Solutions
+
+1. **Error: `map_type is not defined`**
+   - ✅ **FIXED in v1.1.3** - This error has been resolved
+   - The map type is now automatically detected based on the URL in config.js
+
+2. **Screenshots failing or incomplete**
+   - Check your internet connection
+   - Increase the `wait_time` in config.js (default: 6000ms)
+   - Ensure the Excel file path is correct
+
+3. **Browser automation issues**
+   - Make sure you don't interact with the browser while the script is running
+   - Close other browser instances before starting
+   - Check if Playwright is properly installed: `npm install playwright`
+
+4. **Excel file not found**
+   - Verify the file path in config.js
+   - Ensure the Excel file exists in the specified location
+   - Check file permissions
+
+
+This will check:
+- Configuration file loading
+- Map type detection
+- Advanced options setup
+
 ## Changelog
+
+### MPA-CAT1.1.4
+- Added support for advanced options
+
+### MPA-CAT1.1.3 
+- **🔧 Fixed critical bug:** Resolved `map_type is not defined` error that was causing screenshot failures
+- **📝 Code optimization:** Improved code formatting and readability
 
 ### MPA-CAT1.1.2
 - Added one-click run functionality.
