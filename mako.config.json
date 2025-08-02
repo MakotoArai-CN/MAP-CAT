@@ -1,0 +1,28 @@
+{
+  "entry": {
+    "index": "./index.js"
+  },
+  "copy": [
+    "./start.bat",
+    "./README.md",
+    "./LICENSE",
+    "./mapcat.png",
+    "./package.json",
+    "./config.json"
+  ],
+  "output": {
+    "path": "./dist"
+  },
+  "platform": "node",
+  "target": "node",
+  "format": "cjs",
+  "externals": {
+    "fs": "fs",
+    "path": "path",
+    "os": "os",
+    "xlsx": "xlsx"
+  },
+  "mode":  "production",
+   "clean": true,
+   "minify": true
+}

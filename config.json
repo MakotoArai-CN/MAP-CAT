@@ -1,0 +1,148 @@
+{
+  "config": {
+    "version": "1.2.1",
+    "excel_url": "test_data.csv",
+    "screenshots_url": "screenshots",
+    "invisible_BMap_noprint": "invisible_BMap_noprint",
+    "excel_": "screenshots_data.xlsx",
+    "sheetName": "Screenshots_Data",
+    "txt_": "url.txt",
+    "progress_file": "screenshot_progress.json",
+    "map_url": "https://map.baidu.com/",
+    "checkSystem": true,
+    "NetworkLatency_url": "https://www.baidu.com",
+    "DownloadSpeed_url": "https://dldir1v6.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.20_250724_x64_01.exe",
+    "wait_time": 6000,
+    "retry_times": 6,
+    "map_options": {
+      "mapOut_timeonce": 500,
+      "mapOut_timetwice": 500,
+      "mapIn_timeonce": 500,
+      "mapIn_timetwice": 500,
+      "search_wait_time": 1000
+    },
+    "browser_options": {
+      "headless": false,
+      "clip_": {
+        "x": 0,
+        "y": 80,
+        "width": 1000,
+        "height": 500
+      }
+    },
+    "scale_options": {
+      "max_scale_meters": 100,
+      "min_scale_meters": 20,
+      "scale_adjust_timeout": 500,
+      "max_adjust_attempts": 10,
+      "restore_button_wait": 1000,
+      "scale_detection_enabled": true,
+      "restore_button_enabled": true,
+      "extended_search_scales": [10000, 20000],
+      "extended_search_enabled": true
+    },
+    "marker_options": {
+      "use_screenshot_center": true,
+      "drag_target_x_ratio": 0.5,
+      "drag_target_y_ratio": 0.5,
+      "center_tolerance": 20,
+      "visibility_margin": 30,
+      "mouse_wheel_zoom_delta": 120,
+      "wheel_zoom_wait_time": 800,
+      "drag_wait_time": 1000,
+      "drag_offset_distance": 50,
+      "drag_steps": 10,
+      "drag_safe_distance": 80,
+      "drag_retry_attempts": 3,
+      "marker_check_enabled": true
+    },
+    "error_handling": {
+      "max_retry_attempts": 3,
+      "retry_delay": 2000,
+      "critical_error_retry": true,
+      "screenshot_timeout": 15000,
+      "startup_retry_enabled": false,
+      "startup_errors": [
+        "EXCEL_FILE_NOT_FOUND",
+        "BROWSER_LAUNCH_FAILED",
+        "CONFIG_LOAD_FAILED",
+        "DEPENDENCY_MISSING"
+      ]
+    },
+    "data_processing": {
+      "supported_formats": ["xlsx", "csv", "json"],
+      "input_column": "address",
+      "output_fields": ["name", "uuid", "address", "url"],
+      "output_formats": ["excel", "txt"],
+      "sql_config": {
+        "table_name": "screenshot_data",
+        "database_type": "mysql"
+      },
+      "csv_config": {
+        "delimiter": ",",
+        "encoding": "utf-8",
+        "has_header": true
+      },
+      "json_config": {
+        "encoding": "utf-8",
+        "array_field": null
+      }
+    }
+  },
+  "Advanced_options": {
+    "searchBtn_id": "#search-button",
+    "searchInput_id": "#sole-input",
+    "mapSelectInfo_id": "#cards-level1",
+    "map_print_class": ".BMap_noprint",
+    "map_outOrin_father_id": "#map-operate",
+    "map_out_class": ".BMap_stdMpZoomOut",
+    "map_in_class": ".BMap_stdMpZoomIn",
+    "scale_text_selector": ".BMap_scaleTxt",
+    "restore_button_selector": "#map-operate button",
+    "restore_button_index": 3,
+    "hide_elements": {
+      "baidu": [
+        "#cards-level1",
+        "#cards-level0",
+        "#cards-level2",
+        ".BMap_simple_bubble_pop",
+        "#app-right-top",
+        "#mapType-wrapper",
+        ".poilist-widget-container",
+        "#map-bottom-tip",
+        ".BMap_cpyCtrl",
+        ".BMap_bubble_pop",
+        ".shadow"
+      ],
+      "amap": [
+        ".mask--jss-0-16",
+        ".serp-box-con",
+        ".app-download-panel"
+      ]
+    }
+  },
+  "console_color": {
+    "bright": "\u001B[1m",
+    "grey": "\u001B[2m",
+    "italic": "\u001B[3m",
+    "underline": "\u001B[4m",
+    "reverse": "\u001B[7m",
+    "hidden": "\u001B[8m",
+    "black": "\u001B[30m",
+    "red": "\u001B[31m",
+    "green": "\u001B[32m",
+    "yellow": "\u001B[33m",
+    "blue": "\u001B[34m",
+    "magenta": "\u001B[35m",
+    "cyan": "\u001B[36m",
+    "white": "\u001B[37m",
+    "blackBG": "\u001B[40m",
+    "redBG": "\u001B[41m",
+    "greenBG": "\u001B[42m",
+    "yellowBG": "\u001B[43m",
+    "blueBG": "\u001B[44m",
+    "magentaBG": "\u001B[45m",
+    "cyanBG": "\u001B[46m",
+    "whiteBG": "\u001B[47m"
+  }
+}

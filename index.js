@@ -1,21 +1,38 @@
-async function checkNode() {
-        const requiredNodeVersion = [14, 0, 0];
+async function checkRuntime() {
+    // 检查是否在 Bun 环境中运行
+    if (typeof Bun === 'undefined') {
+        console.error('此应用需要在 Bun.js 环境中运行');
+        console.log('请访问 https://bun.sh 获取安装信息');
+        process.exit(1);
+    }
 
-        checkNodeVersion(...requiredNodeVersion);
+    const requiredBunVersion = '1.2.0';
+    const currentVersion = Bun.version;
+
+    // 比较版本号
+    if (compareVersions(currentVersion, requiredBunVersion) < 0) {
+        console.error(`此应用需要 Bun.js ${requiredBunVersion} 或更高版本。当前版本: ${currentVersion}`);
+        console.log('请访问 https://bun.sh 获取最新版本');
+        process.exit(1);
+    }
 
     require("./map-cat.js").MAKOTO_DETECT();
-    }
-function checkNodeVersion(requiredMajor, requiredMinor = 0, requiredPatch = 0) {
-    const [major, minor, patch] = process.versions.node.split('.').map(Number);
-
-    if (major < requiredMajor ||
-        (major === requiredMajor && minor < requiredMinor) ||
-        (major === requiredMajor && minor === requiredMinor && patch < requiredPatch)) {
-        console.error(`此应用需要Node.js ${requiredMajor}.${requiredMinor}.${requiredPatch}或更高版本。当前版本: v${major}.${minor}.${patch}`);
-        console.log("请手动输入以下命令升级node");
-        console.log(require("./config.js").console_color.blue,"n latest",require("./config.js").console_color.white);
-        process.exit(1);
-    } else {
-            }
 }
-checkNode()
+
+// 版本号比较函数
+function compareVersions(a, b) {
+    const partsA = a.split('.').map(Number);
+    const partsB = b.split('.').map(Number);
+    
+    for (let i = 0; i < 3; i++) {
+        const valueA = partsA[i] || 0;
+        const valueB = partsB[i] || 0;
+        
+        if (valueA > valueB) return 1;
+        if (valueA < valueB) return -1;
+    }
+    
+    return 0;
+}
+
+checkRuntime()

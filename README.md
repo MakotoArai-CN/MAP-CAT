@@ -5,7 +5,7 @@
   <br>
   <h2>MAP-CAT</h2>
 
-   [![Release](https://img.shields.io/badge/release-v1.1.3-blue.svg)](https://github.com/MakotoArai-CN/MAP-CAT/releases)
+   [![Release](https://img.shields.io/badge/release-v1.2.0-blue.svg)](https://github.com/MakotoArai-CN/MAP-CAT/releases)
    [![Bun](https://img.shields.io/badge/Bun-1.2.0-brightgreen.svg)](https://bun.sh/)
    [![Node](https://img.shields.io/badge/Node-14+-brightgreen.svg)](https://nodejs.org/)
    [![Playwright](https://img.shields.io/badge/Playwright-1.46.0-brightgreen.svg)](https://playwright.dev/)
@@ -103,10 +103,17 @@ This will check:
 
 ## Changelog
 
+### MPA-CAT1.2.0
+- Optimize drag-and-drop detection  
+- Enhance screenshot correction  
+- Expand search range  
+- Optimize progress tracking  
+- Clean up interface elements
+
 ### MPA-CAT1.1.4
 - Added support for advanced options
 
-### MPA-CAT1.1.3 
+### MPA-CAT1.1.3
 - **🔧 Fixed critical bug:** Resolved `map_type is not defined` error that was causing screenshot failures
 - **📝 Code optimization:** Improved code formatting and readability
 
@@ -121,25 +128,3 @@ This will check:
 - Updated Excel data format.
 - Added self-check function.
 - Fixed known bugs.
-
-### MPA-CAT1.0.5
-- Fixed screenshot bug.
-- Added feature to mark entries without landmarks.
-
-### MPA-CAT1.0.4
-- Achieved near-perfect automation.
-- Fixed known bugs.
-- Added automatic centering of main components.
-
-### MPA-CAT1.0.3
-- Fixed major bug.
-
-### MPA-CAT1.0.2
-- Fixed imprecise screenshot bug.
-
-### MPA-CAT1.0.1
-- Changed image filenames to unique UUIDs, with related information stored in the URL folder.
-
-### MPA-CAT1.0.0
-- Preview release.
-- Screenshots taken based on Excel data and saved locally.

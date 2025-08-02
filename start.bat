@@ -10,53 +10,32 @@ if %errorlevel% == 0 (
 )
 
 :begin
-for /f "delims=" %%a in ('node -v 2^>nul') do (
-    set nodeVersion=%%a
+for /f "delims=" %%a in ('bun -v 2^>nul') do (
+    set bunVersion=%%a
 )
-if %nodeVersion% =="" (
+if "%bunVersion%"=="" (
     goto question
 ) else (
-    echo Node.js seems to be installed.
-    goto checkNodeVersion
+    echo Bun.js seems to be installed.
+    goto startProject
 )
 
 :question
-echo Node.js does not seem to be installed.
-set /p answer=Do you want to download and install Node.js? (y/n):
+echo Bun.js does not seem to be installed.
+set /p answer=Do you want to download and install Bun.js? (y/n):
 if /i %answer%==y goto download
 if /i %answer%==n goto endd
 
 :download
-echo Downloading Node.js(V18.15.0)...
-curl -L https://nodejs.org/dist/v18.15.0/node-v18.15.0-x64.msi -o node.msi --progress-bar
-echo Download complete.   
-echo Please install Node.js using the downloaded file: node.msi
-start node.msi
-set /p nodeVersion=Do you have installed Node.js? (y/n):
-if /i %nodeVersion%==y (
-    del node.msi
-    goto checkNodeVersion
-)
-if /i %nodeVersion%==n goto endd
-
-:update
-set updatequestion= Do you want to update Node.js(V18.15.0)? (y/n):
-if /i %updatequestion%==y goto download
-if /i %updatequestion%==n goto endd
-
-:checkNodeVersion
-echo Checking Node.js version...
-if %nodeVersion:~1,2% gtr 14 (
-    echo Node.js version is OK.
-    goto startProject 
-) else (
-    echo Your Node.js version is too low.This project requires Node.js version 14 or higher.
-    goto update
-)
+echo Installing Bun.js using PowerShell...
+powershell -Command "irm bun.sh/install.ps1|iex"
+echo Installation complete.
+goto begin
 
 :startProject
 echo Starting project...
-call npm i
-call npm run start
+call bun install
+cls
+call bun run start
 
 :endd
